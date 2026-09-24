@@ -1,1 +1,5 @@
 boto3
+fastmcp
+pydantic-ai
+pydantic-ai-harness[acp]
+websockets

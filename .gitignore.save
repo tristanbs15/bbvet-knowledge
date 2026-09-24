@@ -1,0 +1,6 @@
+bbvet-a2codebase/venv/
+**/__pycache__/
+*.pyc
+.DS_Store
+acp_client/node_modules/
+

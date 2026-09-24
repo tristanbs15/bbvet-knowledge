@@ -1,0 +1,5 @@
+# aws sso login
+
+
+# cd bbvet-knowledge/bbvet-a2codebase
+# source venv/bin/activate   

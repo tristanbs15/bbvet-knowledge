@@ -1,7 +1,5 @@
 from __future__ import annotations
-
 import json
-
 import boto3
 
 # The file allows for search through the indexed bbvet knowledge repo.
@@ -12,14 +10,13 @@ import boto3
 # S3 then returns the closest matching document chunks based on the semantic similarity.
 
 
-
+# -------------------------------------------------------------------
 # Configuration
+# -------------------------------------------------------------------
 
 REGION = "ap-southeast-2"
-
 VECTOR_BUCKET = "n12030511-bbvet-vectors"
 VECTOR_INDEX = "bbvet-knowledge"
-
 TITAN_MULTIMODAL_MODEL_ID = "amazon.titan-embed-image-v1"
 DIMENSION = 256
 
@@ -129,7 +126,7 @@ def main() -> None:
         region_name=REGION,
     )
 
-    print("BBVet semantic search")
+    print("BBVet Repo Search")
     print("Type 'quit' to exit.")
 
     while True:
@@ -156,5 +153,5 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 
-# ChatGPT was used to assist (not completely generate) writing this code. 
+# ChatGPT was used to assist writing this code. 
 # The code was reviewed and tested by myself.

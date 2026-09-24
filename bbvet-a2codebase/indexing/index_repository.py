@@ -1,8 +1,6 @@
 from __future__ import annotations
-
 import json
 from pathlib import Path
-
 import boto3
 
 # This file is for understanding semantic meaning in the bbvet-knowledge repo.
@@ -14,21 +12,16 @@ import boto3
 # These embeddings are stored in Amazons S3 Vectors with some other extra metadata that 
 # will be important for referencing (filename, doc type, chunk number).
 
+# -------------------------------------------------------------------
 # Configuration
+# -------------------------------------------------------------------
 
 REGION = "ap-southeast-2"
-
 QUT_USERNAME = "n12030511@qut.edu.au"
 VECTOR_BUCKET = "n12030511-bbvet-vectors"
 VECTOR_INDEX = "bbvet-knowledge"
-
 TITAN_MULTIMODAL_MODEL_ID = "amazon.titan-embed-image-v1"
 DIMENSION = 256
-
-# index_repository.py is:
-# bbvet-knowledge/bbvet-a2codebase/indexing/index_repository.py
-#
-# parents[2] points back to bbvet-knowledge/
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 KNOWLEDGE_FOLDERS = [
@@ -37,10 +30,8 @@ KNOWLEDGE_FOLDERS = [
     REPO_ROOT / "product-info",
 ]
 
-# Simple character-based chunking.
 CHUNK_SIZE = 1200
 CHUNK_OVERLAP = 200
-
 
 # -------------------------------------------------------------------
 # Bedrock embeddings
@@ -269,5 +260,5 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 
-# ChatGPT was used to assist (not completely generate) writing this code. 
+# ChatGPT was used to assist writing this code. 
 # The code was reviewed and tested by myself.
