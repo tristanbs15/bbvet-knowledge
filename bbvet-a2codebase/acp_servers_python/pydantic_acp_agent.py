@@ -24,7 +24,6 @@ MODEL_ID = "nvidia.nemotron-super-3-120b"
 # The MCP practical is extracted beside this directory.
 MCP_SERVER = (
     Path(__file__).parents[1]
-    / "bbvet-a2codebase"
     / "mcp-server"
     / "bbvet_mcp_server.py"
 )
