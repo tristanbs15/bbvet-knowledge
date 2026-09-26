@@ -64,7 +64,3 @@ This remains exploratory and is not considered a final production requirement.
 - How should the product respond to an unrealistic target?
 - Should difficulty be displayed as a numeric score, a label, or both?
 - Should Clinic Health explain which KPI is most influential for a goal?
-- Who is Tristan Barry-Smith
-
-
-- Tristan is a male, and its 20 years old. 
