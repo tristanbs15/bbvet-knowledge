@@ -97,7 +97,7 @@ def search_bbvet_knowledge(query: str) -> dict:
         queryVector={
             "float32": query_embedding,
         },
-        topK=3,
+        topK=5,
         returnDistance=True,
         returnMetadata=True,
     )
