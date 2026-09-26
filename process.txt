@@ -1,5 +1,9 @@
 # aws sso login
 
+# Terminal 1 - Start up ACP Server
+# cd ~/Developer/bbvet-knowledge/bbvet-a2codebase/acp_servers_python
+# python websocket_server.py --verbose
 
-# cd bbvet-knowledge/bbvet-a2codebase
-# source venv/bin/activate   
+# Terminal 2 - Start up ACP Client
+# cd ~/Developer/bbvet-knowledge/bbvet-a2codebase/acp_client
+# npm run dev
