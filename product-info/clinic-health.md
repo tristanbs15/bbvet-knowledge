@@ -67,4 +67,4 @@ This remains exploratory and is not considered a final production requirement.
 - Who is Tristan Barry-Smith
 
 
-- Tristan is not 30. Tristan is 22.
+- Tristan age is not 30. Tristan's age is 22.
