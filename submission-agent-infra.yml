@@ -1,44 +1,44 @@
 cloudInfrastructure:
   - type: Bedrock model
-    arn: <model-id>
-    description: <one-line description>
+    arn: nvidia.nemotron-super-3-120b
+    description: Foundational model used by the BBVet repo agent for reasoning and grounded conversational responses.
 
-  - type: ECS service
-    arn: <arn>
-    description: <one-line description>
+  - type: Bedrock model
+    arn: amazon.titan-embed-image-v1
+    description: embedding model used to create semantic vectors (256 dimensions) for repo knowledge and user questions.
 
   - type: Vector store
-    arn: <arn-or-other-identifier>
-    description: <one-line description>
-
-  - type: MCP server
-    arn: <arn-or-endpoint>
-    description: <one-line description>
+    arn: arn:aws:s3vectors:ap-southeast-2:901444280953:bucket/n12030511-bbvet-vectors
+    description: Amazon S3 Vectors bucket and index storing semantic embeddings of BBVet repository knowledge.
 
   - type: SQS queue
-    arn: <arn>
-    description: <one-line description>
+    arn: arn:aws:sqs:ap-southeast-2:901444280953:n12030511-a2-queue
+    description: creates buffer for repository change jobs between the GitHub webhook producer and asynchronous indexing worker.
 
   - type: EventBridge rule
-    arn: <arn>
-    description: <one-line description>
-
-  - type: Secrets Manager secret
-    arn: <arn>
-    description: <one-line description>
-
-  - type: S3 bucket
-    arn: <arn>
-    description: <one-line description>
+    arn: arn:aws:scheduler:ap-southeast-2:901444280953:schedule/default/n12030511-a2-heartbeat
+    description: EventBridge scheduler that runs heartbeat weekly summary automatically.
 
   - type: DynamoDB table
-    arn: <arn>
-    description: <one-line description>
+    arn: arn:aws:dynamodb:ap-southeast-2:901444280953:table/n12030511-a2-weekly-heartbeat
+    description: Stores timestamped autonomous heartbeat and issue-triage summaries.
 
   - type: Lambda function
-    arn: <arn>
-    description: <one-line description>
+    arn: arn:aws:lambda:ap-southeast-2:901444280953:function:n12030511-a2-indexer
+    description: notes repository change jobs, fetches changed markdown, chunks the content, creates embeddings, and updates the vector index.
+  
+  - type: Lambda function
+    arn: arn:aws:lambda:ap-southeast-2:901444280953:function:n12030511-a2-heartbeat
+    description: fetches open git issues, and performs the weekly heartbeat summary of the issues in the repo.
+  
+  - type: Lambda function
+    arn: arn:aws:lambda:ap-southeast-2:901444280953:function:n12030511-gitwebhook
+    description: Receives GitHub webhook events and queues changed repository files for asynchronous processing.
+  
+  - type: API Gateway
+    arn: arn:aws:apigateway:ap-southeast-2::/apis/m803ja7zi3
+    description: Reused API! exposes the git webhook endpoint that triggers the asynchronous repository indexing workflow.
 
 metaData:
-  track: <"A" | "B">
-  qutUsernameTag: <qut-username@qut.edu.au>
+  track: "B"
+  qutUsernameTag: n12030511@qut.edu.au
