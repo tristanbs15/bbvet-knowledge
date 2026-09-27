@@ -23,6 +23,14 @@ cloudInfrastructure:
     arn: arn:aws:dynamodb:ap-southeast-2:901444280953:table/n12030511-a2-weekly-heartbeat
     description: Stores timestamped autonomous heartbeat and issue-triage summaries.
 
+  - type: ECS service
+    arn: arn:aws:ecs:ap-southeast-2:901444280953:service/n12030511-a2-cluster/n12030511-bbvet-mcp-service-mvvikudx
+    description: supposed to deploy a containerised BBVet MCP server. Couldn't get it working in time. 
+
+  - type: ECR cluster
+    arn: arn:aws:ecs:ap-southeast-2:901444280953:cluster/n12030511-a2-cluster
+    description: Hosts the Fargate environment used to deploy the containerised BBVet MCP server. Didnt end up getting functional in time.
+
   - type: Lambda function
     arn: arn:aws:lambda:ap-southeast-2:901444280953:function:n12030511-a2-indexer
     description: notes repository change jobs, fetches changed markdown, chunks the content, creates embeddings, and updates the vector index.

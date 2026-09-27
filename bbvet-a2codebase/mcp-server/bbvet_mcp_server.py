@@ -127,7 +127,11 @@ def search_bbvet_knowledge(query: str) -> dict:
 # -------------------------------------------------------------------
 
 if __name__ == "__main__":
-    mcp.run()
+    mcp.run(
+        transport="http",
+        host="0.0.0.0",
+        port=8000,
+    )
 
 # ChatGPT was used to assist writing this code. 
 # The code was reviewed and tested by myself.
