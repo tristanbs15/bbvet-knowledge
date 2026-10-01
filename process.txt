@@ -2,7 +2,12 @@
 
 # Terminal 1 - Start up ACP Server
 # cd ~/Developer/bbvet-knowledge/bbvet-a2codebase/acp_servers_python
+# source venv/bin/activate
+
+# cd ~/Developer/bbvet-knowledge/bbvet-a2codebase/acp_servers_python
 # python websocket_server.py --verbose
+
+
 
 # Terminal 2 - Start up ACP Client
 # cd ~/Developer/bbvet-knowledge/bbvet-a2codebase/acp_client
